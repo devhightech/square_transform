@@ -1,0 +1,64 @@
+/* IMPORTAÇÃO DA FONTE UTILIZADA (GOOGLE FONTS) */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300&display=swap'); 
+
+/* INÍCIO: DIRETIVA @KEYFRAMES SEGUIDA 
+DO NOME QUE SE QUER ATRIBUIR À ANIMAÇÃO */
+@keyframes square-transform{ 
+
+    /* AQUI DENTRO FICA A "LINHA DO TEMPO", 
+    DEFINIDA POR PORCENTAGENS, ONDE AS 
+    PROPRIEDADES SÃO MANIPULADAS DE ACORDO 
+    COM O PONTO EM QUE IRÃO OCORRER. */
+    0%{
+        border-radius: 0;
+        background-color: yellow;
+    }
+    
+    25%{
+        border-radius: 0 100% 0 0;
+        background-color: red;
+    }
+    
+    50%{
+        border-radius: 0 100% 100% 0;
+        background-color: green;
+    }
+    
+    75%{
+        border-radius: 0 100% 100% 100%; 
+        background-color: purple;
+    }
+    
+    100%{
+        border-radius: 100%;
+    }
+}
+
+body{
+    background-color: black;
+}
+
+.square{ /* estilização do cubo */
+    /* altura e largura*/
+    width: 300px;
+    height: 300px;
+
+    margin: auto; /* centraliza o cubo na pág (eixo x) */
+    margin-top: 10%; /* margem apenas para melhor vizualização */
+    border-radius: 0; /* arredondamento de borda */
+    background-color: blue; /* cor de fundo */
+    
+    transition: all 1s ease 0s; /* propriedade abreviada para definir as quatro propriedades de transição em uma única propriedade */
+    animation: square-transform 5s 0.5s infinite cubic-bezier(1, 0.15, 0.29, 1.21) alternate; /* propriedade abreviada (shorthand) para definir todas as propriedades da animação */
+}
+    
+h1{ /* estilização do texto h1 */
+    color: white; /* cor da letra */
+
+    padding-top: 40%; /* distância do texto a borda do cubo */
+    font-family: 'Cairo', sans-serif; /* definição de font-family a partir da fonte importada do google fonts */
+
+    /* alinhamento do conteúdo ao centro */
+    display: flex; 
+    justify-content: center;
+}
